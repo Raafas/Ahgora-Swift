@@ -1,0 +1,6 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
+options: "8311b2283d22658b5bd04dc7afba728b"
+build_time: [1510255549, 79021000]
+inputs:
+  "/Users/rafaelleandro/Developer/PontoApp/PunchLib/Sources/PunchLib/AhgoraApi.swift": [1510253874, 0]
+  "/Users/rafaelleandro/Developer/PontoApp/PunchLib/Sources/PunchLib/Model/User.swift": [1510235978, 0]

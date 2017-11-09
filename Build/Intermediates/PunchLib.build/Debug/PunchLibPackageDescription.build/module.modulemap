@@ -1,0 +1,4 @@
+framework module PunchLibPackageDescription {
+    header "PunchLibPackageDescription-Swift.h"
+    requires objc
+}
