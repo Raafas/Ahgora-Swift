@@ -1,4 +1,0 @@
-framework module PunchLib {
-    header "PunchLib-Swift.h"
-    requires objc
-}
