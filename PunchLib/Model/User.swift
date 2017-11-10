@@ -17,7 +17,7 @@ public struct User: Encodable{
         case companyId = "empresa"
     }
     
-    init(id: String, password: String, companyId: String) {
+    public init(id: String, password: String, companyId: String) {
         self.id = id
         self.password = password
         self.companyId = companyId
