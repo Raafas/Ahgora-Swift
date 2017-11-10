@@ -12,6 +12,8 @@
 		7411E2121FB4FED700E89F35 /* PunchLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 7411E2041FB4FED700E89F35 /* PunchLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7411E21D1FB4FEEB00E89F35 /* AhgoraApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7411E21C1FB4FEEB00E89F35 /* AhgoraApi.swift */; };
 		7430C45E1FB5005D0030EBD1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430C45D1FB5005D0030EBD1 /* User.swift */; };
+		748E5B231FB5CF8400204D19 /* AhgoraProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E5B221FB5CF8400204D19 /* AhgoraProtocol.swift */; };
+		748E5B251FB5E7F300204D19 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748E5B241FB5E7F300204D19 /* HTTPRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		7411E2111FB4FED700E89F35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7411E21C1FB4FEEB00E89F35 /* AhgoraApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhgoraApi.swift; sourceTree = "<group>"; };
 		7430C45D1FB5005D0030EBD1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		748E5B221FB5CF8400204D19 /* AhgoraProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhgoraProtocol.swift; sourceTree = "<group>"; };
+		748E5B241FB5E7F300204D19 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				7411E21C1FB4FEEB00E89F35 /* AhgoraApi.swift */,
 				7411E2041FB4FED700E89F35 /* PunchLib.h */,
 				7411E2051FB4FED700E89F35 /* Info.plist */,
+				748E5B221FB5CF8400204D19 /* AhgoraProtocol.swift */,
+				748E5B241FB5E7F300204D19 /* HTTPRequest.swift */,
 			);
 			path = PunchLib;
 			sourceTree = "<group>";
@@ -211,6 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748E5B231FB5CF8400204D19 /* AhgoraProtocol.swift in Sources */,
+				748E5B251FB5E7F300204D19 /* HTTPRequest.swift in Sources */,
 				7430C45E1FB5005D0030EBD1 /* User.swift in Sources */,
 				7411E21D1FB4FEEB00E89F35 /* AhgoraApi.swift in Sources */,
 			);

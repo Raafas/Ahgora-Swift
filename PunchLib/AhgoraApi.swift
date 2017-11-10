@@ -26,6 +26,11 @@ fileprivate enum Ahgora{
 
 public class AhgoraApi{
     
+    public typealias SuccessHandler = ([String]) -> Void
+    public typealias FailureHandler = (_ error: Error) -> Void
+    
+    
+    
     public init() { }
     
     public func Login(user: User, completion: @escaping (_ success: String?) -> Void ) {

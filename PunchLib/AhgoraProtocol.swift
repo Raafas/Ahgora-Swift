@@ -6,8 +6,10 @@
 //  Copyright © 2017 Involves. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class AhgoraProtocol: NSObject {
-
+protocol AhgoraProtocol {
+    
+    func get() -> HTTPRequest
+    func post() -> HTTPRequest
 }
