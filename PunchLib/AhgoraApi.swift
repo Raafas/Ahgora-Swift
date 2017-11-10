@@ -26,6 +26,8 @@ fileprivate enum Ahgora{
 
 public class AhgoraApi{
     
+    public init() { }
+    
     public func Login(user: User, completion: @escaping (_ success: String?) -> Void ) {
         let baseUrl = Ahgora.identity.url.appending(user.companyId)
         guard let url = URL(string: baseUrl) else{ return }
