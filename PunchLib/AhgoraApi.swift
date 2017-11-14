@@ -33,6 +33,11 @@ public class AhgoraApi{
     
     public init() { }
     
+    @discardableResult
+    public func apiCall(path: String, baseUrl: String, method: HTTPMethodType, parameters:  Dictionary<String, Any>) -> HTTPRequest {
+        
+    }
+    
     public func Login(user: User, completion: @escaping (_ success: String?) -> Void ) {
         let baseUrl = Ahgora.identity.url.appending(user.companyId)
         guard let url = URL(string: baseUrl) else{ return }

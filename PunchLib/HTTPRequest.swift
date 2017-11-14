@@ -20,7 +20,7 @@ public enum HTTPMethodType: String {
     case CONNECT
 }
 
-class HTTPRequest: NSObject, URLSessionDataDelegate {
+class HTTPRequest: NSObject {
 
     public typealias SuccessHandler = (Data, HTTPURLResponse) -> Void
     public typealias FailureHandler = (Error) -> Void
@@ -28,13 +28,52 @@ class HTTPRequest: NSObject, URLSessionDataDelegate {
     let url: URL
     let HTTPMethod: HTTPMethodType
     var request: URLRequest?
+    var dataTask: URLSessionDataTask?
+    var headers: Dictionary<String, String> = [:]
+    var parameters: Dictionary<String, Any>
+    var response: HTTPURLResponse?
+    var responseData: Data = Data()
+    var successHandler: SuccessHandler?
+    var failureHandler: FailureHandler?
     
     // MARK: Initializers
-    init(url: URL, method: HTTPMethodType) {
+    init(url: URL, method: HTTPMethodType, parameters: Dictionary<String, Any> = [:]) {
         self.url = url
         self.HTTPMethod = method
+        self.parameters = parameters
     }
     
+    init(request: URLRequest) throws {
+        self.request = request
+        guard let url = request.url else { throw NSError(domain: "Invalid URL", code: 0, userInfo: nil) }
+        guard let method = request.httpMethod else { throw NSError(domain: "", code: 0, userInfo: nil) }
+        self.url = url
+        self.HTTPMethod = HTTPMethodType(rawValue: method) ?? .GET
+        self.parameters = [:]
+    }
     
+    func start(){
+        if (request == nil){
+            self.request = URLRequest(url: self.url)
+            self.request?.httpMethod = self.HTTPMethod.rawValue
+            
+            for (key, value) in headers{
+                self.request?.setValue(value, forHTTPHeaderField: key)
+            }
+        }
+        DispatchQueue.main.async {
+            guard let request = self.request else { return }
+            let session = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
+            self.dataTask = session.dataTask(with: request)
+            self.dataTask?.resume()
+            #if os(iOS)
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            #endif
+        }
+    }
     
+    public func stop() {
+        guard let dataTask = self.dataTask else { return }
+        dataTask.cancel()
+    }
 }
